@@ -1,0 +1,33 @@
+name: app_widget_android
+description: Android implementation for app_widget plugin
+version: 0.4.0
+homepage: https://noxasch.tech/
+repository: https://github.com/noxasch/flutter_app_widget/tree/master/app_widget_android
+issue_tracker: https://github.com/noxasch/flutter_app_widget/issues
+publish_to: "none"
+
+environment:
+  sdk: ">=2.17.6 <4.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.7
+  # app_widget_platform_interface: ^0.4.0
+  app_widget_platform_interface: # local dev
+    path: ../app_widget_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    implements: app_widget
+    platforms:
+      android:
+        package: tech.noxasch.app_widget
+        pluginClass: AppWidgetPlugin
+        dartPluginClass: AppWidgetAndroid
